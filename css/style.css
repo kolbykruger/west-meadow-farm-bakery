@@ -223,14 +223,17 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
     }
 
 /*Features*/
-.features {overflow: hidden; margin: 30px -10px; display: flex; flex-flow: row wrap;}
-.features .item {position: relative; overflow: hidden; margin: 10px; width: calc(33.333% - 20px);}
+.features {max-width: 1400px; margin: -4px auto 0; overflow: hidden;}
+.features .group {display: flex; flex-flow: row wrap;}
+.features .item {position: relative; overflow: hidden; width: 25%;}
 .features .item a{text-decoration: none; display: block; color: inherit;}
-.features .item .image img{width: 100%; height: auto;}
-.features .item .bar{width: 100%; padding: 10px 0; text-align: center;}
-.features .item .title {font-size: 2rem; margin: 0; text-transform: uppercase; font-weight: 400;}
-.features .item .description {font-size: 1.3rem; text-transform: uppercase; font-weight: 400;}
-.features .item:hover .image{opacity: .9;}
+.features .item .image img{width: 100%; height: auto; opacity: 0.85;}
+.features .item .bar{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; transition: 250ms ease;}
+.features .item .title {font-size: 3rem; margin: 0; font-weight: 600; font-family: 'Cantata One', serif; color: #fff; opacity: 0; transform: translateY(15px); transition: 250ms ease;}
+.features .item a:hover .title,
+.features .item a:focus .title {opacity: 1; transform: translateY(0);}
+.features .item a:hover .bar,
+.features .item a:focus .bar {background: rgba(0,0,0,0.5);}
 
     @media (max-width: 768px) {
     .features{margin: 20px -10px;}
